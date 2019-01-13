@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Retrieval</title>
+</head>
+<body>
+    <div style="padding-left: 60px;">
+        <h1>Image Retrieval</h1>
+
+            <div style="width:450px; float:left; background:#FFFFFF">
+                <form action="" enctype='multipart/form-data' method='POST'>
+                    <input type="file" name="picture" style="margin-top:20px;"/>
+                    <br>
+                    <i>Upload your picture, please click here: </i>
+                    <input type="submit" value="upload" name="submit" class="button-new" style="margin-top:15px;"/>
+                    <br>
+                    <i>Start retrieval, please click here: </i>
+                    <input type="submit" value="retrieval" name="submit" class="button-new" style="margin-top:15px;"/>
+                </form>
+                <h3>{{message}}</h3>
+                <img src="{{ url_for('static', filename= './upload_image/query.jpg') }}" width="400" />
+            </div> 
+
+            <div style=" margin-left:450px; background:#FFFFFF">
+                    <h3>Retrieval result:</h3>
+                    <h4>Similarity of top 3: {{sml1}}, {{sml2}}, {{sml3}}</h4>
+                    <div>
+                        <img src="{{img1_tmb}}" height="200px" overflow=hidden/>
+                        <img src="{{img2_tmb}}" height="200px" overflow=hidden/>
+                        <img src="{{img3_tmb}}" height="200px" overflow=hidden/>
+                    </div>
+                    <h4>Similarity of 4 ~ 6: {{sml4}}, {{sml5}}, {{sml6}}</h4>
+                    <div>
+                        <img src="{{img4_tmb}}" height="200px" overflow=hidden/>
+                        <img src="{{img5_tmb}}" height="200px" overflow=hidden/>
+                        <img src="{{img6_tmb}}" height="200px" overflow=hidden/>
+                    </div>
+            </div>  
+    </div>
+</body>
+</html>
