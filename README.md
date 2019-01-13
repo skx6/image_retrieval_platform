@@ -7,8 +7,11 @@ The demo video is shown downside.
 
 ## Usage.
 Create folder "models" in "retrieval" folder, and "thumb_images" in "static/" folder.
-Download pretrained CNN model from and put the model in path "./retrieval/models/".
+Get the pretrained CNN model from [this link] (https://drive.google.com/open?id=1TG_Fq_UryffsmV045u4MJGaWB-MJqNgI)
+and put the model in path "./retrieval/models/".
+
 run the following command:
+
 $ python image_retrieval_cnn.py
 
 # File orgnization.
