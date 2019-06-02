@@ -6,7 +6,13 @@ The demo video is shown downside.
 ![image](https://github.com/SongKaixiang/image_retrieval_platform/blob/master/retrieval/demo.gif)
 
 ## Usage.
-Create folder "models" in "retrieval" folder, and "thumb_images" in "static/" folder.
+
+Please install requirements.txt first:
+
+```
+$ pip install requirements.txt
+```
+
 Get the pretrained CNN model from [this link](https://drive.google.com/open?id=1TG_Fq_UryffsmV045u4MJGaWB-MJqNgI)
 and put the model in path "./retrieval/models/".
 
