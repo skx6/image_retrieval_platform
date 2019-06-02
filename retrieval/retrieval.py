@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import print_function, division
 
-import argparse
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
 from torchvision import datasets, models, transforms
 import os
-
 
 from torch.utils.data import dataloader, Dataset
 from PIL import Image
@@ -91,7 +88,7 @@ def extract_feature(model, dataloaders, use_gpu=True):
     use_gpu = use_gpu and torch.cuda.is_available()
     for img, path in dataloaders:
         img = img.cuda() if use_gpu else img
-        input_img = Variable(img.cuda())
+        input_img = Variable(img.cuda()) if use_gpu else Variable(img)
         outputs = model(input_img)
         ff = outputs.data.cpu()
         # norm feature
@@ -165,20 +162,20 @@ def sort_img(qf, gf):
 if __name__ == '__main__':
 
     # Prepare data.
-    data_loader = load_data(data_path='./test_pytorch/gallery/images/',
+    data_loader = load_data(data_path='../static/image_database/',
                             batch_size=2,
                             shuffle=False,
                             transform='default',
                             )
 
     # Prepare model.
-    model = load_model(pretrained_model='./model/ft_ResNet50/net_best.pth', use_gpu=True)
+    model = load_model(pretrained_model='./models/net_best.pth', use_gpu=True)
 
     # Extract database features.
     gallery_feature, image_paths = extract_feature(model=model, dataloaders=data_loader)
 
     # Query.
-    query_image = load_query_image('./test_pytorch/query/query.jpg')
+    query_image = load_query_image('../static/upload_image/query.jpg')
 
     # Extract query features.
     query_feature = extract_feature_query(model=model, img=query_image)
@@ -188,4 +185,3 @@ if __name__ == '__main__':
 
     sorted_paths = [image_paths[i] for i in index]
     print(sorted_paths)
-
