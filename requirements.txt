@@ -1,0 +1,14 @@
+certifi==2019.3.9
+cffi==1.12.3
+Click==7.0
+Flask==1.0.3
+itsdangerous==1.1.0
+Jinja2==2.10.1
+MarkupSafe==1.1.1
+mkl-fft==1.0.12
+mkl-random==1.0.2
+numpy==1.16.4
+opencv-python==4.1.0.25
+pycparser==2.19
+torch==1.0.1
+Werkzeug==0.15.4
