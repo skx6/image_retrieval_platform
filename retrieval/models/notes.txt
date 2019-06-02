@@ -1,0 +1,5 @@
+Please down load pretrained model from:
+
+https://drive.google.com/open?id=1TG_Fq_UryffsmV045u4MJGaWB-MJqNgI
+
+to the directory: .retieval/models/net_best.pth
