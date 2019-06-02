@@ -24,7 +24,7 @@ run the following command:
 $ python image_retrieval_cnn.py
 ```
 
-You can vist "http://XXX.XXX.XXX.XXX:8080/" for the website, where "XXX.XXX.XXX.XXX" is your local ip, type "ifconfig" in command widow to get your it.
+You can vist "http://XXX.XXX.XXX.XXX:8080/" for the website, where "XXX.XXX.XXX.XXX" is your local ip, type "ifconfig" in command widow to get it.
 
 # Only Test.
 
