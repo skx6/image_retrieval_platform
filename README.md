@@ -16,5 +16,7 @@ run the following command:
 $ python image_retrieval_cnn.py
 ```
 
+You can vist "http://XXX.XXX.XXX.XXX:8080/" for the website, type "ifconfig" in command widow to get your ip: XXX.XXX.XXX.XXX
+
 # File orgnization.
 If you only want to test the retrieval proccess, just read the code image_retrieval_cnn.py for reference.
