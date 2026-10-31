@@ -1,0 +1,40 @@
+
+name: Python CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  code-quality:
+    name: Code Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.7"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Install Flake8
+        run: pip install flake8
+
+      - name: Check code style
+        run: |
+          flake8 image_retrieval.py retrieval/ \
+            --max-line-length=100 \
+            --statistics
+
+      - name: Check Python syntax
+        run: |
+          python -m compileall -q image_retrieval.py retrieval/
